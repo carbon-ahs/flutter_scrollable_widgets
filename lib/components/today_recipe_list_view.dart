@@ -25,7 +25,7 @@ class TodayRecipeListView extends StatelessWidget {
         children: [
 // 5
           Text('Recipes of the Day " ',
-              style: Theme.of(context).textTheme.headline1),
+              style: Theme.of(context).textTheme.displayLarge),
 // 6
           const SizedBox(height: 16),
 // 7
@@ -38,5 +38,17 @@ class TodayRecipeListView extends StatelessWidget {
       ),
     );
   }
-// TODO: Add buildCard() widget here
+
+//buildCard() widget here
+  Widget buildCard(ExploreRecipe recipe) {
+    if (recipe.cardType == RecipeCardType.card1) {
+      return Card1(recipe: recipe);
+    } else if (recipe.cardType == RecipeCardType.card2) {
+      return Card2(recipe: recipe);
+    } else if (recipe.cardType == RecipeCardType.card3) {
+      return Card3(recipe: recipe);
+    } else {
+      throw Exception('This card doesn\'t exist yet');
+    }
+  }
 }
