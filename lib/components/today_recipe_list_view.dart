@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 // 1
 import '../components/components.dart';
@@ -24,7 +26,7 @@ class TodayRecipeListView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 // 5
-          Text('Recipes of the Day " ',
+          Text('Recipes of the Day',
               style: Theme.of(context).textTheme.displayLarge),
 // 6
           const SizedBox(height: 16),
@@ -32,7 +34,20 @@ class TodayRecipeListView extends StatelessWidget {
           Container(
             height: 400,
 // TODO: Add ListView Here
-            color: Colors.grey,
+            color: Colors.transparent,
+            child: ListView.separated(
+              scrollDirection: Axis.horizontal,
+              itemCount: recipes.length,
+              itemBuilder: (context, index) {
+                final recipe = recipes[index];
+                return buildCard(recipe);
+              },
+              separatorBuilder: (context, index) {
+                return SizedBox(
+                  width: 4,
+                );
+              },
+            ),
           ),
         ],
       ),
