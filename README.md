@@ -1,9 +1,12 @@
 # Scrollable Widget
 
-A new Flutter project to practice ---
-• How to use ListView.
-• How to nest scroll views.
-• How to leverage the power of GridView
+A new Flutter project to practice -
+• How to use ListView. - done
+• How to nest scroll views. - done
+
+
+• How to leverage the power of GridView - not done, pls contineu from page 189
+
 
 ## Key points
 
